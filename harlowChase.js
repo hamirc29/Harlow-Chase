@@ -132,19 +132,19 @@ function cWrap(cX, cY) {
 
 
 function keyPressed() {
-        if (keyCode == UP_ARROW) {
+        if (keyCode === UP_ARROW) {
             pVy = playerSpeed * -1;
             pVx = 0;
         }
-        if (keyCode == DOWN_ARROW) {
+        if (keyCode === DOWN_ARROW) {
             pVy = playerSpeed;
             pVx = 0;
         }
-        if (keyCode == LEFT_ARROW) {
+        if (keyCode === LEFT_ARROW) {
             pVx = playerSpeed * -1;
             pVy = 0;
         }
-        if (keyCode == RIGHT_ARROW) {
+        if (keyCode === RIGHT_ARROW) {
             pVx = playerSpeed;
             pVy = 0;
         }
