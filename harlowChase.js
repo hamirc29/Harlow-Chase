@@ -1,30 +1,31 @@
-let harlow;
-let shark;
-let fish;
-let pSize;
-let pX;
-let pY;
-let pVx;
-let pVy;
-let playerSpeed;
-let numC;
-let cSize;
-let cX;
-let cY;
-let cXMultiplier;
-let cYMultiplier;
-let cVx;
-let cVy;
-let eSize;
-let eX;
-let eY;
-let eVx;
-let eVy;
-let eXMultiplier;
-let eYMultiplier;
-let gameOver;
+var harlow;
+var shark;
+var fish;
+var pSize;
+var pX;
+var pY;
+var pVx;
+var pVy;
+var playerSpeed;
+var numC;
+var cSize;
+var cX;
+var cY;
+var cXMultiplier;
+var cYMultiplier;
+var cVx;
+var cVy;
+var eSize;
+var eX;
+var eY;
+var eVx;
+var eVy;
+var eXMultiplier;
+var eYMultiplier;
+var gameOver;
+
 function setup() {
-    fullScreen();
+    createCanvas(windowWidth,windowHeight);
     gameOver = false;
     pSize = 100;
     pX = width / 2;
@@ -47,7 +48,7 @@ function setup() {
     cVy = new Array(numC);
     cXMultiplier = new Array(numC);
     cYMultiplier = new Array(numC);
-    for (let i = 0; i < numC; i++) {
+    for (var i = 0; i < numC; i++) {
         cX[i] = random(cSize / 2, width - cSize / 2);
         cY[i] = random(cSize / 2, height - cSize / 2);
         cVx[i] = random(3, 8);
@@ -106,7 +107,7 @@ function draw() {
             stopMoving();
         }
     } //draw fish
-    for (let i = 0; i < numC; i++) {
+    for (var i = 0; i < numC; i++) {
         fill(255, 0, 0);
         image(fish, cX[i], cY[i], cSize, cSize);
         cX[i] += cVx[i] * cXMultiplier[i];
@@ -120,7 +121,7 @@ function draw() {
     }
 }
 function cWrap(cX, cY) {
-    for (let i = 0; i < numC; i++) {
+    for (var i = 0; i < numC; i++) {
         if (cX[i] < -cSize / 2) cX[i] = width + cSize / 2;
         if (cX[i] > width + cSize / 2) cX[i] = -cSize / 2;
         if (cY[i] < -cSize / 2) cY[i] = height + cSize / 2;
@@ -149,7 +150,7 @@ function keyPressed() {
     }
 }
 function collision(x, y, size) {
-    let distP = dist(pX, pY, x, y);
+    var distP = dist(pX, pY, x, y);
     if (distP < pSize / 2 + createCanvas / 2) {
         return true;
     } else {
@@ -182,7 +183,7 @@ function stopMoving() {
     eVx = 0;
     eVy = 0;
     playerSpeed = 0;
-    for (let i = 0; i < numC; i++) {
+    for (var i = 0; i < numC; i++) {
         cXMultiplier[i] = 0;
         cYMultiplier[i] = 0;
     }
