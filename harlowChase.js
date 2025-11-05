@@ -156,8 +156,8 @@ function keyPressed() {
 
 
 function collision(x, y, size) {
-    var distP = dist(pX, pY, x, y);
-    if (distP < pSize / 2 + createCanvas / 2) {
+    let distP = dist(pX, pY, x, y);
+    if ( distP < pSize / 2 + createCanvas / 2) {
         return true;
     } else {
         return false;
