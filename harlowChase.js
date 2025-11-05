@@ -129,8 +129,9 @@ function cWrap(cX, cY) {
     }
     pWrap();
 }
+
+
 function keyPressed() {
-    if (key == CODED) {
         if (keyCode == UP_ARROW) {
             pVy = playerSpeed * -1;
             pVx = 0;
@@ -147,8 +148,9 @@ function keyPressed() {
             pVx = playerSpeed;
             pVy = 0;
         }
-    }
 }
+
+
 function collision(x, y, size) {
     var distP = dist(pX, pY, x, y);
     if (distP < pSize / 2 + createCanvas / 2) {
