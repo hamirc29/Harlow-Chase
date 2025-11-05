@@ -25,7 +25,11 @@ var eYMultiplier;
 var gameOver;
 
 function setup() {
-    createCanvas(windowWidth,windowHeight);
+    let canvas = createCanvas(windowWidth, windowHeight);
+    canvas.elt.tabIndex = '0';
+    canvas.elt.focus();
+
+    
     gameOver = false;
     pSize = 100;
     pX = width / 2;
